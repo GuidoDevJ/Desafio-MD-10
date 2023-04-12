@@ -1,0 +1,40 @@
+.navbar{
+    position: relative;
+    background-color: #000;
+    width: 100%;
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hidden{
+    display: none;
+}
+
+.container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+}
+
+@media (max-width:760px){
+    .navbar{
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 10vh;
+        grid-template-areas: "logo button"
+                              "form form "   ;
+    }
+    .navbar a{
+        grid-area: logo;
+    }
+    .navbar div{
+        grid-area: form;
+    }
+    .navbar svg,.navbar button{
+        grid-area: button;
+        justify-self: end;
+    }
+}

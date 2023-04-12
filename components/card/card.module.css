@@ -1,0 +1,50 @@
+.container{
+    width: 315px;
+    height: 321px;
+    display: flex;
+    flex-direction: column;
+    border: solid #000 4px;
+    border-radius: 4px;
+}
+
+
+.containerImg{
+    width: 100%;
+    height: 237px;
+}
+
+.containerImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.containerText{
+    width: 100%;
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--fucsia);
+}
+.price{
+    width: 100%;
+    font-family: 'Inter', cursive;
+    font-size: 32px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.cards{
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fill,minmax(328px,1fr));
+    overflow: auto;
+    justify-items: center;
+}
+.cards a {
+    text-decoration: none;
+}

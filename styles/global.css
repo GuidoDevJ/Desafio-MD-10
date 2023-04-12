@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow-x:hidden; */
+}
+:root{
+    --blue:#4F7CAC;
+    --sky-blue:#91E5F6;
+    --orange:#FFC700;
+    --dark-blue:#201E50;
+    --fucsia:#E75A7C;
+}

@@ -16,7 +16,13 @@ const Card = React.memo(function Card({ url, price, title, id }: Card) {
     <Link href={`./products/${id}`} className={style.link}>
       <div className={style.container}>
         <div className={style.containerImg}>
-          <Image src={url} alt={title} width={100} height={100} />
+          <Image
+            src={url}
+            alt={title}
+            width={100}
+            height={100}
+            priority={true}
+          />
         </div>
         <div className={style.containerText}>
           <Text>{title}</Text>

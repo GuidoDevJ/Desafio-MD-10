@@ -21,6 +21,7 @@ const Text = styled.h2`
   line-height: 24px;
   font-weight: 400;
   color: ${(props) => props.color || "#fff"};
+  cursor: pointer;
 `;
 
 const LargeText = styled(Text)`

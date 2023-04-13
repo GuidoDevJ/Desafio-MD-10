@@ -9,7 +9,7 @@ const fetchApiGet = async (path: string) => {
     const res = await fetch(`${URL_BACK + path}`, {
       method: "get",
       headers: {
-        "Authorization": `bearer ${authLocalStorage}`,
+        Authorization: `bearer ${authLocalStorage}`,
       },
     });
     if (res.status >= 200 && res.status < 300) {
@@ -19,21 +19,18 @@ const fetchApiGet = async (path: string) => {
     if (res.status >= 400) {
       throw "Error la peticion sufrio un error";
     }
-  } else {
-    alert("No existe token");
-    return;
   }
 };
-const fetchApiPatch = async (path: string,body:{}) => {
+const fetchApiPatch = async (path: string, body: {}) => {
   let authLocalStorage = checkToken();
   if (authLocalStorage) {
     const res = await fetch(`${URL_BACK + path}`, {
       method: "PATCH",
       headers: {
-        "Content-Type":"application/json",
-        "Authorization": `bearer ${authLocalStorage}`,
+        "Content-Type": "application/json",
+        Authorization: `bearer ${authLocalStorage}`,
       },
-      body:JSON.stringify(body)
+      body: JSON.stringify(body),
     });
     if (res.status >= 200 && res.status < 300) {
       let result = await res.json();
@@ -42,9 +39,6 @@ const fetchApiPatch = async (path: string,body:{}) => {
     if (res.status >= 400) {
       throw "Error la peticion sufrio un error";
     }
-  } else {
-    alert("No existe token");
-    return;
   }
 };
 
@@ -73,13 +67,20 @@ async function authEmailAndCode(obj: {}) {
   return dataRes.token;
 }
 
-const changeData=async (obj:any)=>{
+const changeData = async (obj: any) => {
   let authLocalStorage = checkToken();
-  
-  if (authLocalStorage) {
-    const res = await fetchApiPatch(`/me`,obj)
-    return res.msg
-  }
-}
 
-export { fetchApiGet, authEmail, authEmailAndCode, fetcher, URL_BACK,changeData };
+  if (authLocalStorage) {
+    const res = await fetchApiPatch(`/me`, obj);
+    return res.msg;
+  }
+};
+
+export {
+  fetchApiGet,
+  authEmail,
+  authEmailAndCode,
+  fetcher,
+  URL_BACK,
+  changeData,
+};

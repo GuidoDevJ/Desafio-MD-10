@@ -1,7 +1,10 @@
 import { TinyText, Text, SubTitle } from "@/ui/texts";
 import style from "./style.module.css";
 import { Linker } from "@/ui/link";
-const ListItem = ({ user, show, close }: any) => {
+import { useMe, useSingOut } from "@/hooks/hooks";
+const ListItem = ({ show, close }: any) => {
+  const data = useMe();
+  const { singOut } = useSingOut();
   return (
     <div className={show ? style.list : style.hidden}>
       <div className={style.close}>
@@ -15,8 +18,10 @@ const ListItem = ({ user, show, close }: any) => {
         <Linker text="Buscar" path="/search" />
       </ul>
       <footer>
-        <TinyText>{user}</TinyText>
-        <Text color="#E75A7C">Cerrar Session</Text>
+        <TinyText>{data?.email}</TinyText>
+        <Text color="#E75A7C" onClick={singOut}>
+          Cerrar Session
+        </Text>
       </footer>
     </div>
   );

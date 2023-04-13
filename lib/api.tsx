@@ -13,7 +13,6 @@ const fetchApiGet = async (path: string) => {
       },
     });
     if (res.status >= 200 && res.status < 300) {
-      console.log(res);
       let result = await res.json();
       return result;
     }
@@ -21,7 +20,8 @@ const fetchApiGet = async (path: string) => {
       throw "Error la peticion sufrio un error";
     }
   } else {
-    console.log("No existe token");
+    alert("No existe token");
+    return;
   }
 };
 const fetchApiPatch = async (path: string,body:{}) => {
@@ -43,7 +43,8 @@ const fetchApiPatch = async (path: string,body:{}) => {
       throw "Error la peticion sufrio un error";
     }
   } else {
-    console.log("No existe token");
+    alert("No existe token");
+    return;
   }
 };
 

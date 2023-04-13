@@ -18,7 +18,6 @@ const Navbar = ({ handler, show }: any) => {
   }
 
   function showButtons(width: number) {
-    console.log("navbar token =>", token !== "");
     if (width <= 768) {
       return <Burger width={154} height={34} onClick={handler} />;
     }

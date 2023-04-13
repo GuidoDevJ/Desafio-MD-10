@@ -1,6 +1,3 @@
-import { singInValue } from "@/atoms";
-import { useRecoilValue } from "recoil";
-
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {

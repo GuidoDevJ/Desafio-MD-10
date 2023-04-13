@@ -1,8 +1,4 @@
 import { ListItem } from "@/components/menu-links";
-import { Navbar } from "@/components/navbar";
-import { useState } from "react";
-import style from "./style.module.css";
-import { Footer } from "../footer";
 import { FormProducts } from "../Forms/searchProducts";
 import { FeaturedProducts } from "../featured-products";
 import { Titulo } from "@/ui/texts";

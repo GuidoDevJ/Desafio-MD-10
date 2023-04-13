@@ -56,7 +56,6 @@ const useSingIn = () => {
     e.preventDefault();
     const target = e.target as any;
     const email = target.Email.value;
-    console.log(regEx.test(email));
     if (email === "") {
       alert("Pone algo chamigo");
       return;
@@ -112,10 +111,8 @@ const useSearchProduct = () => {
     target.disabled = false;
     count + 2;
     const totalResults = data?.pagination.total ?? 0;
-    console.log("click");
-    console.log(totalResults, count);
     if (count === totalResults) {
-      console.log("llegamos no hay mas");
+      alert("llegamos no hay mas");
       return;
     }
     router.push(
@@ -158,7 +155,6 @@ const usePayProduct = () => {
   const authLocalStorage = checkToken();
   const { id } = router.query;
   async function handlerPayment() {
-    console.log("local,", authLocalStorage);
     if (authLocalStorage === null) return router.push("/ingresar");
     const res = await fetch(`${URL_BACK}/order?productId=${id}`, {
       method: "post",
@@ -205,7 +201,6 @@ const useChangeDataUser = () => {
       ciudad,
       telefono,
     };
-    // console.log(datos)
     const data = await changeData(datos);
     if (data === "success") {
       alert("Excelente cambiaste tus datos");

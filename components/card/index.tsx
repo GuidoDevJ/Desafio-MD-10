@@ -1,8 +1,8 @@
 import style from "./card.module.css";
 import Image from "next/image";
-import { Text, BodyBold } from "@/ui/texts";
+import { Text } from "@/ui/texts";
 import Link from "next/link";
-import React, { useMemo } from "react";
+import React from "react";
 interface Card {
   url: string;
   price: string;
@@ -11,7 +11,6 @@ interface Card {
 }
 
 const Card = React.memo(function Card({ url, price, title, id }: Card) {
-  console.log("card");
   return (
     <Link href={`./products/${id}`} className={style.link}>
       <div className={style.container}>

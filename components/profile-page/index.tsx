@@ -5,7 +5,6 @@ import { SubTitle } from "@/ui/texts";
 import style from "./style.module.css";
 import { ListItem } from "@/components/menu-links";
 import { useChangeDataUser, useNavbar } from "@/hooks/hooks";
-import { changeData } from "@/lib/api";
 
 const Me = () => {
   const { show, handlerShow, handlerClose } = useNavbar();

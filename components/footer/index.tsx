@@ -1,5 +1,4 @@
 import style from "./style.module.css"
-import Twitter  from "icons/Twietter.svg";
 import { Body, LargeText } from '@/ui/texts';
 import { Face, Tweet } from "@/ui/socialIcon";
 import { Linker } from "@/ui/link";

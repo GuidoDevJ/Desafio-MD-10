@@ -1,5 +1,3 @@
-import { Titulo } from "@/ui/texts";
-import { Loading } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import style from "./style.module.css";

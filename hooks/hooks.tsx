@@ -18,6 +18,10 @@ import {
 import { useRouter } from "next/router";
 import { checkToken } from "helpers/index";
 import { useRecoilState, useRecoilValue } from "recoil";
+import { Burger } from "@/ui/logo_car";
+import { EmailText } from "@/ui/email";
+import { ButtonLink } from "@/ui/link";
+import { FormProducts } from "@/components/Forms/searchProducts";
 
 const useMe = () => {
   const { data } = useSWR("/me", fetchApiGet);
@@ -187,6 +191,37 @@ const useNavbar = () => {
   };
 };
 
+const useNavbarFunctions = ({ handler, email }: any) => {
+  const token = checkToken();
+  const router = useRouter();
+  const path = router.pathname;
+  function handlerSingIn() {
+    router.push("/ingresar");
+  }
+
+  function showButtons(width: number) {
+    if (width <= 768) {
+      return <Burger width={154} height={34} onClick={handler} />;
+    }
+    if (token !== null) {
+      return <EmailText email={email} />;
+    }
+    return (
+      <ButtonLink text="Ingresar" handler={handlerSingIn} path="/ingresar" />
+    );
+  }
+
+  function showSearchForm() {
+    if (path !== "/") {
+      return <FormProducts />;
+    }
+  }
+  return {
+    showButtons,
+    showSearchForm,
+  };
+};
+
 const useChangeDataUser = () => {
   const router = useRouter();
 
@@ -224,4 +259,5 @@ export {
   useSingIn,
   useSingOut,
   useChangeDataUser,
+  useNavbarFunctions,
 };

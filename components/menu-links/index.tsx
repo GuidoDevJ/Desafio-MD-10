@@ -15,7 +15,7 @@ const ListItem = ({ user, show, close }: any) => {
         <Linker text="Buscar" path="/search" />
       </ul>
       <footer>
-        <TinyText>{user || "guidogauna9@gmail.com"}</TinyText>
+        <TinyText>{user}</TinyText>
         <Text color="#E75A7C">Cerrar Session</Text>
       </footer>
     </div>

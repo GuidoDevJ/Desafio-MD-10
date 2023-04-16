@@ -17,7 +17,7 @@ const ProductItem = ({ imgUlr, title, price, description }: ProdItem) => {
   return (
     <div className={style.container}>
       <div className={style.imagen}>
-        <Image src={imgUlr} alt={title} width={100} height={100} />
+        <Image src={imgUlr} alt={title} fill/>
       </div>
 
       <div className={style.text}>

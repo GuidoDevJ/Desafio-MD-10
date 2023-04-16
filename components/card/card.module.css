@@ -9,15 +9,17 @@
 
 
 .containerImg{
+    position: relative;
     width: 100%;
     height: 237px;
+    object-fit: cover;
 }
 
-.containerImg img{
+/* .containerImg img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 
 .containerText{
     width: 100%;

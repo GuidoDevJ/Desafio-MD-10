@@ -22,6 +22,7 @@ import { Burger } from "@/ui/logo_car";
 import { EmailText } from "@/ui/email";
 import { ButtonLink } from "@/ui/link";
 import { FormProducts } from "@/components/Forms/searchProducts";
+import { successAlert, warningAlert } from "@/ui/alerts";
 
 const useMe = () => {
   const { data } = useSWR("/me", fetchApiGet);
@@ -61,11 +62,11 @@ const useSingIn = () => {
     const target = e.target as any;
     const email = target.Email.value;
     if (email === "") {
-      alert("Pone algo chamigo");
+      warningAlert("Esta ocurriendo un error","Por favor introduzca algun correo");
       return;
     }
     if (regEx.test(email) !== true) {
-      alert("Fijate algo esta mal en tu email");
+      warningAlert("Esta ocurriendo un error","Por favor introduzca algun correo valido");
       return;
     }
     await authEmail(email);
@@ -101,7 +102,7 @@ const useSingIn = () => {
 const useSearchProduct = () => {
   const [count, setCounter] = useState(0);
   const router = useRouter();
-  const { q, offset, limit } = router.query;
+  const { q, limit } = router.query;
   const { data, isLoading } = useSWR(
     `${URL_BACK}/search?q=${q}&offset=0&limit=${limit}`,
     fetcher
@@ -116,7 +117,6 @@ const useSearchProduct = () => {
     count + 2;
     const totalResults = data?.pagination.total ?? 0;
     if (count === totalResults) {
-      alert("llegamos no hay mas");
       return;
     }
     router.push(
@@ -238,7 +238,7 @@ const useChangeDataUser = () => {
     };
     const data = await changeData(datos);
     if (data === "success") {
-      alert("Excelente cambiaste tus datos");
+      successAlert("Actualizacion de datos","Excelente cambiaste tus datos");
       router.push("/");
     }
   }

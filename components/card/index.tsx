@@ -17,9 +17,8 @@ const Card = React.memo(function Card({ url, price, title, id }: Card) {
         <div className={style.containerImg}>
           <Image
             src={url}
-            alt={title}
-            width={100}
-            height={100}
+            alt={title}   
+            fill
             priority={true}
           />
         </div>

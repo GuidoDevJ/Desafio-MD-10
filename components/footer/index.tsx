@@ -17,8 +17,8 @@ const Footer = () => {
         <div>
             <LargeText>Redes</LargeText>
             <ul >
-                <IconLink path="https://twitter.com"><Tweet/></IconLink>
-                <IconLink path="https://es-la.facebook.com"><Face/></IconLink>
+                <IconLink path=""><Tweet/></IconLink>
+                <IconLink path=""><Face/></IconLink>
             </ul>
         </div>
         <Body>&#169; 2023 APX</Body>

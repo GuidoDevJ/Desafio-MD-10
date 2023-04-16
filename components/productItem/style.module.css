@@ -10,16 +10,12 @@
 }
 
 .imagen{
+    position: relative;
     width: 100%;
     height: 237px;
+    object-fit: cover;
 }
 
-.imagen img{
-    width: 100%;
-    height: 100%;
-
-
-}
 
 @media (min-width:420px){
     .imagen img{

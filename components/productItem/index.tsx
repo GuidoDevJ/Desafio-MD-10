@@ -38,5 +38,4 @@ const ProductItem = ({ imgUlr, title, price, description }: ProdItem) => {
     </div>
   );
 };
-
 export { ProductItem };

@@ -1,5 +1,5 @@
 # Ecommerce programado con Next Js
-====
+-------
 ## Detalles
 Aplicacion desarrollada en Next y React, donde los usuarios pueden buscar articulos de interes y comprarlos utilizando MercadoPago como medio de pago.
 ------
@@ -7,5 +7,4 @@ Aplicacion desarrollada en Next y React, donde los usuarios pueden buscar articu
 Next js, SWR, Typescript, React,Recoil,Styled Components
 ----
 ## Link de la aplicacion
-
-[Eccomerce]:(desafio-md-10-6qzdmgrlx-guidodevj.vercel.app)
+[Link](desafio-md-10-6qzdmgrlx-guidodevj.vercel.app)
